@@ -123,10 +123,11 @@ void GazeboMavlinkInterface::CreateSensorSubscription(
   }
 
   // Verify if the sensor joint exists
+  bool success = false;
   for (physics::Joint_V::const_iterator it = joints.begin(); it != joints.end(); ++it) {
     // std::cout << (*it)->GetName() << std::endl;
     if (std::regex_match((*it)->GetName(), model)) {
-      // Get sensor joint name (without the ''::joint' suffix)
+            // Get sensor joint name (without the ''::joint' suffix)
       const std::string joint_name = (*it)->GetName().substr(0, (*it)->GetName().size() - 6);
       const std::string model_name = model_->GetName();
 
@@ -173,15 +174,35 @@ void GazeboMavlinkInterface::CreateSensorSubscription(
               << std::endl;
 
       // Create the subscriber for the sensors
-      auto subscriberPtr = node_handle_->Subscribe("~/" + model_name + "/link/" + sensor_name,
+            auto subscriberPtr = node_handle_->Subscribe("~/" + model_name + "/link/" + sensor_name,
                                                    &SensorHelperStorage<GazeboMsgT>::callback,
                                                    &callback_entry.first->second);
       // Store the SubscriberPtr, sensor ID and sensor orientation
       sensor_map_.insert(std::pair<transport::SubscriberPtr, SensorIdRot_P>(subscriberPtr,
                                                                             SensorIdRot_P(sensor_id, sensor_orientation))
                                                                            );
+      success = true;
     }
   }
+  // if (!success) {
+  //   // Check the regex is kDefaultGPSModelNaming
+  //   if (&model == &kDefaultGPSModelNaming) {
+  //     gzwarn << "No GPS sensor found. Please add a GPS sensor to the model." << std::endl;
+
+  //     std::string gps_sensor_name = "~/" + model_->GetName() + "/wamv/base_link/gps/";
+  //     // int sensor_id = 0;
+  //     // static std::map<std::string, SensorHelperStorage<GazeboMsgT> > callback_map;
+  //     // auto callback_entry = callback_map.emplace(gps_sensor_name, SensorHelperStorage<GazeboMsgT>{ ptr, fp, sensor_id });
+  //     // auto subscriberPtr = node_handle_->Subscribe(gps_sensor_name, &SensorHelperStorage<GazeboMsgT>::callback, &callback_entry.first->second);
+  //     // const auto sensor_orientation = nested_model->RelativePose().Rot();
+  //     // sensor_map_.insert(std::pair<transport::SubscriberPtr, SensorIdRot_P>(subscriberPtr, SensorIdRot_P(sensor_id, sensor_orientation)));
+
+  //     auto subscriberPtr = node_handle_->Subscribe(
+  //         gps_sensor_name, &[&](GpsPtr& gps_msg) -> void { GpsCallback(gps_msg, 0); });
+  //   } else {
+  //     gzwarn << "No sensor found with the given regex: " << std::endl;
+  //   }
+  // }
 }
 
 void GazeboMavlinkInterface::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf) {
@@ -557,9 +578,9 @@ void GazeboMavlinkInterface::OnUpdate(const common::UpdateInfo&  /*_info*/) {
   std::unique_lock<std::mutex> lock(last_imu_message_mutex_);
 
   if (previous_imu_seq_ > 0) {
-    while (previous_imu_seq_ == last_imu_message_.seq() && IsRunning()) {
-      last_imu_message_cond_.wait_for(lock, std::chrono::milliseconds(10));
-    }
+    // while (previous_imu_seq_ == last_imu_message_.seq() && IsRunning()) {
+    //   last_imu_message_cond_.wait_for(lock, std::chrono::milliseconds(10));
+    // }
   }
 
   previous_imu_seq_ = last_imu_message_.seq();
