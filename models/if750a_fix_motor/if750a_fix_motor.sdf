@@ -1,5 +1,5 @@
 <sdf version='1.6'>
-  <model name='if750a_fix_motor'>
+  <model name='if750a'>
     <link name='base_link'>
       <pose>0 0 0 0 -0 0</pose>
       <inertial>
@@ -38,7 +38,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://if750a/meshes/if750a_fix.stl</uri>
+            <uri>model://if750a_fix_motor/meshes/if750a_fix.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -380,7 +380,6 @@
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>1100</maxRotVelocity>
-      <!-- <motorConstant>1.709716e-05</motorConstant> -->
       <motorConstant>1.709716e-05</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
