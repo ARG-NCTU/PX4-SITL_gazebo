@@ -26,7 +26,7 @@
       <origin rpy="1.570796 -0 1.57079632679489661923" xyz="0 0 0" />
       <geometry>
         <mesh
-          filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/if750a/meshes/if750a.stl"
+          filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/if750a_camera_pushing/meshes/if750a.stl"
           scale="0.001 0.001 0.001" />
       </geometry>
       <material name="darkgrey" />
