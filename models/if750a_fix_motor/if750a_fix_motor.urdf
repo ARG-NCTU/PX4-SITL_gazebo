@@ -1,0 +1,168 @@
+<?xml version="1.0" ?>
+<robot name="if750a_fix_motor">
+  <link name="base_link">
+    <origin rpy="0 -0 0" xyz="0 0 0"/>
+    <inertial>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
+      <mass value="1.5"/>
+      <inertia ixx="0.0347563" ixy="0" ixz="0" iyy="0.0458929" iyz="0" izz="0.0977"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.570796 -0 1.57079632679489661923" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/if750a_fix_motor/meshes/if750a_fix.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Gazebo/DarkGrey"/>
+    </visual>
+  </link>
+  <link name="/imu_link">
+    <origin rpy="0 -0 0" xyz="0 0 0"/>
+    <inertial>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
+      <mass value="0.015"/>
+      <inertia ixx="1e-05" ixy="0" ixz="0" iyy="1e-05" iyz="0" izz="1e-05"/>
+    </inertial>
+  </link>
+  <joint name="/imu_joint" type="revolute">
+    <child link="/imu_link"/>
+    <parent link="base_link"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+  <link name="rotor_0">
+    <origin rpy="0 -0 0" xyz="0.265 -0.265 0.35"/>
+    <inertial>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
+      <mass value="0.005"/>
+      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_ccw.dae" scale="1 1 1"/>
+      </geometry>
+      <material name="Gazebo/Blue"/>
+    </visual>
+  </link>
+  <joint name="rotor_0_joint" type="revolute">
+    <child link="rotor_0"/>
+    <parent link="base_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1e+16" upper="1e+16" velocity="10" effort="1"/>
+    <origin xyz="0.265 -0.265 0.35"/>
+  </joint>
+  <link name="rotor_1">
+    <origin rpy="0 -0 0" xyz="-0.265 0.265 0.35"/>
+    <inertial>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
+      <mass value="0.005"/>
+      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_ccw.dae" scale="1 1 1"/>
+      </geometry>
+      <material name="Gazebo/DarkGrey"/>
+    </visual>
+  </link>
+  <joint name="rotor_1_joint" type="revolute">
+    <child link="rotor_1"/>
+    <parent link="base_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1e+16" upper="1e+16" velocity="10" effort="1"/>
+    <origin xyz="-0.265 0.265 0.35"/>
+  </joint>
+  <link name="rotor_2">
+    <origin rpy="0 -0 0" xyz="0.265 0.265 0.35"/>
+    <inertial>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
+      <mass value="0.005"/>
+      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_cw.dae" scale="1 1 1"/>
+      </geometry>
+      <material name="Gazebo/Blue"/>
+    </visual>
+  </link>
+  <joint name="rotor_2_joint" type="revolute">
+    <child link="rotor_2"/>
+    <parent link="base_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1e+16" upper="1e+16" velocity="10" effort="1"/>
+    <origin xyz="0.265 0.265 0.35"/>
+  </joint>
+  <link name="rotor_3">
+    <origin rpy="0 -0 0" xyz="-0.265 -0.265 0.35"/>
+    <inertial>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
+      <mass value="0.005"/>
+      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 -0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_cw.dae" scale="1 1 1"/>
+      </geometry>
+      <material name="Gazebo/DarkGrey"/>
+    </visual>
+  </link>
+  <joint name="rotor_3_joint" type="revolute">
+    <child link="rotor_3"/>
+    <parent link="base_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1e+16" upper="1e+16" velocity="10" effort="1"/>
+    <origin xyz="-0.265 -0.265 0.35"/>
+  </joint>
+  <link name="gps0_link">
+    <origin rpy="0 0 0" xyz="-0.01 0.173 0.47"/>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.015"/>
+      <inertia ixx="1e-05" ixy="0" ixz="0" iyy="1e-05" iyz="0" izz="1e-05"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.002" radius="0.01"/>
+      </geometry>
+      <material name="Gazebo/Black"/>
+    </visual>
+  </link>
+  <joint name="gps0_joint" type="fixed">
+    <child link="gps0_link"/>
+    <parent link="base_link"/>
+    <origin xyz="-0.01 0.173 0.47"/>
+  </joint>
+  <link name="gps1_link">
+    <origin rpy="0 0 0" xyz="0.001 -0.173 0.47"/>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.015"/>
+      <inertia ixx="1e-05" ixy="0" ixz="0" iyy="1e-05" iyz="0" izz="1e-05"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.002" radius="0.01"/>
+      </geometry>
+      <material name="Gazebo/Black"/>
+    </visual>
+  </link>
+  <joint name="gps1_joint" type="fixed">
+    <child link="gps1_link"/>
+    <parent link="base_link"/>
+    <origin xyz="0.001 -0.173 0.47"/>
+  </joint>
+  <material name="Gazebo/DarkGrey">
+    <color rgba=".175 .175 .175 1.0"/>
+  </material>
+  <material name="Gazebo/Blue">
+    <color rgba="0 0 1 1.0"/>
+  </material>
+  <material name="Gazebo/Black">
+    <color rgba="0 0 0 1"/>
+  </material>
+</robot>

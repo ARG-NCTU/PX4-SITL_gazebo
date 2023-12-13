@@ -1,5 +1,5 @@
 <sdf version='1.6'>
-  <model name='if750a'>
+  <model name='if750a_fix_motor'>
     <link name='base_link'>
       <pose>0 0 0 0 -0 0</pose>
       <inertial>
