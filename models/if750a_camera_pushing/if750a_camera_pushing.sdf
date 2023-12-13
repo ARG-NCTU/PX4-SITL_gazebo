@@ -538,65 +538,10 @@
       <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
       <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
     </plugin>
-    <link name="vertical_rod_link">
+    <!-- <link name='vertical_rod_link'>
       <pose>0 0 -0.075 0 0 0</pose>
-
-            <gravity>0</gravity>
-            <inertial>
-                <pose>0.01 0.025 0.025 0 0 0</pose>
-                <mass>0.00001</mass>
-                <inertia>
-                    <ixx>1e-08</ixx>
-                    <ixy>0</ixy>
-                    <ixz>0</ixz>
-                    <iyy>1e-08</iyy>
-                    <iyz>0</iyz>
-                    <izz>1e-08</izz>
-                </inertia>
-            </inertial>
-            <!-- <collision name="collision">
-                <pose>0 0 0 0 0 0</pose>
-                <geometry>
-                    <cylinder>
-                        <radius>0.04</radius>
-                        <length>0.15</length>
-                    </cylinder>
-                </geometry>
-            </collision> -->
-            <visual name="visual">
-                <pose>0 0 0 0 0 0</pose>
-                <origin rpy="0 0 0" xyz="0 0 -0.03"/>
-                <geometry>
-                    <cylinder>
-                        <radius>0.05</radius>
-                        <length>0.15</length>
-                    </cylinder>
-                </geometry>
-            </visual>
-    </link>
-    <joint name='vertical_rod_joint' type='fixed'>
-      <child>vertical_rod_link</child>
-      <parent>base_link</parent>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-    <link name="horizontal_rod_link">
-      <pose>0 0 -0.15 0 0 0</pose>
-      <gravity>0</gravity>
       <inertial>
-        <pose>0.01 0.025 0.025 0 0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>0.00001</mass>
         <inertia>
           <ixx>1e-08</ixx>
@@ -607,44 +552,290 @@
           <izz>1e-08</izz>
         </inertia>
       </inertial>
-      <collision name="collision">
-        <pose>0.2 0 0 0 1.57 0</pose>
+      <visual name='visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <origin xyz='0 0 0' rpy='0 0 0'/>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
-            <length>0.5</length>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='vertical_rod_joint' type='fixed'>
+      <child>vertical_rod_link</child>
+      <parent>base_link</parent>
+    </joint> -->
+    <link name='horizontal_rod_link'>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>1e-08</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-08</iyy>
+          <iyz>0</iyz>
+          <izz>1e-08</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <pose>0 0 0 0 1.57079632679489661923 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>1.0</length>
           </cylinder>
         </geometry>
       </collision>
-      <visual name="visual">
-        <pose>0.2 0 0 0 1.57 0</pose>
-        <origin rpy="0 0 0" xyz="0 0 -0.03"/>
+      <visual name='visual'>
+        <pose>0 0 0 0 1.57079632679489661923 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.03</radius>
-            <length>0.5</length>
+            <radius>0.02</radius>
+            <length>1.0</length>
           </cylinder>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='horizontal_rod_joint' type='fixed'>
       <child>horizontal_rod_link</child>
       <parent>base_link</parent>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
     </joint>
-  </model>
 
+    <model name="front_camera">
+      <pose>0.1358 0 0.2282 0 0.19198621771 0</pose>
+      <link name="link">
+        <inertial>
+          <pose>0.01 0.025 0.025 0 0 0</pose>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>4.15e-6</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.407e-6</iyy>
+            <iyz>0</iyz>
+            <izz>2.407e-6</izz>
+          </inertia>
+        </inertial>
+        <sensor name="depth_camera" type="depth">
+          <update_rate>30</update_rate>
+          <camera>
+            <horizontal_fov>1.02974</horizontal_fov>
+            <image>
+              <format>R8G8B8</format>
+              <width>640</width>
+              <height>480</height>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <plugin filename="libgazebo_ros_openni_kinect.so" name="camera_controller">
+            <cameraName>drone/front_camera</cameraName>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>30</updateRate>
+            <pointCloudCutoff>0.2</pointCloudCutoff>
+            <pointCloudCutoffMax>20</pointCloudCutoffMax>
+            <imageTopicName>rgb/image_raw</imageTopicName>
+            <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+            <depthImageTopicName>depth/image_raw</depthImageTopicName>
+            <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+            <pointCloudTopicName>depth/points</pointCloudTopicName>
+            <frameName>camera_link</frameName>
+            <distortion_k1>0.0</distortion_k1>
+            <distortion_k2>0.0</distortion_k2>
+            <distortion_k3>0.0</distortion_k3>
+            <distortion_t1>0.0</distortion_t1>
+            <distortion_t2>0.0</distortion_t2>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+
+    <joint name="front_camera_joint" type="fixed">
+      <child>front_camera::link</child>
+      <parent>base_link</parent>
+    </joint>
+
+    <model name="downward_camera">
+      <pose>0.127909 0 0.187349 0 1.570796327 0</pose>
+      <link name="link">
+        <inertial>
+          <pose>0.01 0.025 0.025 0 0 0</pose>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>4.15e-6</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.407e-6</iyy>
+            <iyz>0</iyz>
+            <izz>2.407e-6</izz>
+          </inertia>
+        </inertial>
+
+        <sensor name="depth_camera" type="depth">
+          <update_rate>30</update_rate>
+          <camera>
+            <horizontal_fov>1.02974</horizontal_fov>
+            <image>
+              <format>R8G8B8</format>
+              <width>640</width>
+              <height>480</height>
+            </image>
+            <clip>
+              <near>0.2</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <plugin filename="libgazebo_ros_openni_kinect.so" name="camera_controller">
+            <cameraName>drone/downward_camera</cameraName>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>30</updateRate>
+            <pointCloudCutoff>0.2</pointCloudCutoff>
+            <pointCloudCutoffMax>20</pointCloudCutoffMax>
+            <imageTopicName>rgb/image_raw</imageTopicName>
+            <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+            <depthImageTopicName>depth/image_raw</depthImageTopicName>
+            <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+            <pointCloudTopicName>depth/points</pointCloudTopicName>
+            <frameName>camera_link</frameName>
+            <distortion_k1>0.0</distortion_k1>
+            <distortion_k2>0.0</distortion_k2>
+            <distortion_k3>0.0</distortion_k3>
+            <distortion_t1>0.0</distortion_t1>
+            <distortion_t2>0.0</distortion_t2>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+
+    <joint name="downward_camera_joint" type="fixed">
+      <child>downward_camera::link</child>
+      <parent>base_link</parent>
+    </joint>
+
+    <model name="left_camera">
+      <pose>0.085811 0.092407 0.210252 0 0.192440003 1.40964135</pose>
+      <link name="link">
+        <inertial>
+          <pose>0.01 0.025 0.025 0 0 0</pose>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>4.15e-6</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.407e-6</iyy>
+            <iyz>0</iyz>
+            <izz>2.407e-6</izz>
+          </inertia>
+        </inertial>
+
+        <sensor name="depth_camera" type="depth">
+          <update_rate>30</update_rate>
+          <camera>
+            <horizontal_fov>1.02974</horizontal_fov>
+            <image>
+              <format>R8G8B8</format>
+              <width>640</width>
+              <height>480</height>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <plugin filename="libgazebo_ros_openni_kinect.so" name="camera_controller">
+            <cameraName>drone/left_camera</cameraName>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>30</updateRate>
+            <pointCloudCutoff>0.2</pointCloudCutoff>
+            <pointCloudCutoffMax>20</pointCloudCutoffMax>
+            <imageTopicName>rgb/image_raw</imageTopicName>
+            <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+            <depthImageTopicName>depth/image_raw</depthImageTopicName>
+            <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+            <pointCloudTopicName>depth/points</pointCloudTopicName>
+            <frameName>camera_link</frameName>
+            <distortion_k1>0.0</distortion_k1>
+            <distortion_k2>0.0</distortion_k2>
+            <distortion_k3>0.0</distortion_k3>
+            <distortion_t1>0.0</distortion_t1>
+            <distortion_t2>0.0</distortion_t2>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+
+    <joint name="left_camera_joint" type="fixed">
+      <child>left_camera::link</child>
+      <parent>base_link</parent>
+    </joint>
+
+    <model name="right_camera">
+      <pose>0.085811 -0.092407 0.210252 0 0.192440003 1.40964135</pose>
+      <link name="link">
+        <inertial>
+          <pose>0.01 0.025 0.025 0 0 0</pose>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>4.15e-6</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.407e-6</iyy>
+            <iyz>0</iyz>
+            <izz>2.407e-6</izz>
+          </inertia>
+        </inertial>
+        <sensor name="depth_camera" type="depth">
+          <update_rate>30</update_rate>
+          <camera>
+            <horizontal_fov>1.02974</horizontal_fov>
+            <image>
+              <format>R8G8B8</format>
+              <width>640</width>
+              <height>480</height>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <plugin filename="libgazebo_ros_openni_kinect.so" name="camera_controller">
+            <cameraName>drone/right_camera</cameraName>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>30</updateRate>
+            <pointCloudCutoff>0.2</pointCloudCutoff>
+            <pointCloudCutoffMax>20</pointCloudCutoffMax>
+            <imageTopicName>rgb/image_raw</imageTopicName>
+            <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+            <depthImageTopicName>depth/image_raw</depthImageTopicName>
+            <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+            <pointCloudTopicName>depth/points</pointCloudTopicName>
+            <frameName>camera_link</frameName>
+            <distortion_k1>0.0</distortion_k1>
+            <distortion_k2>0.0</distortion_k2>
+            <distortion_k3>0.0</distortion_k3>
+            <distortion_t1>0.0</distortion_t1>
+            <distortion_t2>0.0</distortion_t2>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+
+    <joint name="right_camera_joint" type="fixed">
+      <child>right_camera::link</child>
+      <parent>base_link</parent>
+    </joint>
+    
+  </model>
 </sdf>
