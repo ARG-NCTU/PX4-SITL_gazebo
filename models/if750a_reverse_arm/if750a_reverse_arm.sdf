@@ -1386,7 +1386,7 @@
           </image>
           <clip>
             <near>0.1</near>
-            <far>100</far>
+            <far>10</far>
           </clip>
         </camera>
         <plugin filename="libgazebo_ros_openni_kinect.so" name="camera_controller">
@@ -1400,7 +1400,7 @@
           <depthImageTopicName>depth/image_raw</depthImageTopicName>
           <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
           <pointCloudTopicName>depth/points</pointCloudTopicName>
-          <frameName>camera_link</frameName>
+          <frameName>drone/front_camera_optical_link</frameName>
           <distortion_k1>0.0</distortion_k1>
           <distortion_k2>0.0</distortion_k2>
           <distortion_k3>0.0</distortion_k3>
@@ -1416,8 +1416,8 @@
     <parent>base_link</parent>
   </joint>
 
-  <model name="downward_camera">
-    <pose>0.127909 0 0.187349 0 1.570796327 0</pose>
+  <model name="downward45_camera">
+    <pose>0.127909 0 0.187349 0 0.7853981635 0</pose>
     <link name="link">
       <inertial>
         <pose>0.01 0.025 0.025 0 0 0</pose>
@@ -1442,22 +1442,22 @@
             <height>480</height>
           </image>
           <clip>
-            <near>0.2</near>
-            <far>100</far>
+            <near>0.1</near>
+            <far>10</far>
           </clip>
         </camera>
         <plugin filename="libgazebo_ros_openni_kinect.so" name="camera_controller">
           <cameraName>drone/downward_camera</cameraName>
           <alwaysOn>true</alwaysOn>
-          <updateRate>30</updateRate>
+          <updateRate>60</updateRate>
           <pointCloudCutoff>0.2</pointCloudCutoff>
-          <pointCloudCutoffMax>20</pointCloudCutoffMax>
+          <pointCloudCutoffMax>10</pointCloudCutoffMax>
           <imageTopicName>rgb/image_raw</imageTopicName>
           <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
           <depthImageTopicName>depth/image_raw</depthImageTopicName>
           <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
           <pointCloudTopicName>depth/points</pointCloudTopicName>
-          <frameName>camera_link</frameName>
+          <frameName>drone/downward_camera_optical_link</frameName>
           <distortion_k1>0.0</distortion_k1>
           <distortion_k2>0.0</distortion_k2>
           <distortion_k3>0.0</distortion_k3>
@@ -1469,7 +1469,7 @@
   </model>
 
   <joint name="downward_camera_joint" type="fixed">
-    <child>downward_camera::link</child>
+    <child>downward45_camera::link</child>
     <parent>base_link</parent>
   </joint>
 
@@ -1500,7 +1500,7 @@
           </image>
           <clip>
             <near>0.1</near>
-            <far>100</far>
+            <far>10</far>
           </clip>
         </camera>
         <plugin filename="libgazebo_ros_openni_kinect.so" name="camera_controller">
@@ -1514,7 +1514,7 @@
           <depthImageTopicName>depth/image_raw</depthImageTopicName>
           <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
           <pointCloudTopicName>depth/points</pointCloudTopicName>
-          <frameName>camera_link</frameName>
+          <frameName>drone/left_camera_optical_link</frameName>
           <distortion_k1>0.0</distortion_k1>
           <distortion_k2>0.0</distortion_k2>
           <distortion_k3>0.0</distortion_k3>
@@ -1556,7 +1556,7 @@
           </image>
           <clip>
             <near>0.1</near>
-            <far>100</far>
+            <far>10</far>
           </clip>
         </camera>
         <plugin filename="libgazebo_ros_openni_kinect.so" name="camera_controller">
@@ -1570,7 +1570,7 @@
           <depthImageTopicName>depth/image_raw</depthImageTopicName>
           <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
           <pointCloudTopicName>depth/points</pointCloudTopicName>
-          <frameName>camera_link</frameName>
+          <frameName>drone/right_camera_optical_link</frameName>
           <distortion_k1>0.0</distortion_k1>
           <distortion_k2>0.0</distortion_k2>
           <distortion_k3>0.0</distortion_k3>
