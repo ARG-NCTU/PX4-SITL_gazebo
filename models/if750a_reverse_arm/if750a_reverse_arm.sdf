@@ -14,11 +14,30 @@
           <izz>0.0977</izz>
         </inertia>
       </inertial>
-      <collision name='base_link_inertia_collision'>
-        <pose>0 0 0 0 -0 0</pose>
+      <collision name='base_link_inertia_collision_left'>
+        <pose>0 0.18 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.47 0.47 0.11</size>
+            <size>0.35 0.1 0.05</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_link_inertia_collision_right'>
+        <pose>0 -0.18 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.35 0.1 0.05</size>
           </box>
         </geometry>
         <surface>
@@ -1531,7 +1550,7 @@
   </joint>
 
   <model name="right_camera">
-    <pose>0.085811 -0.092407 0.210252 0 0.192440003 1.40964135</pose>
+    <pose>0.085811 -0.092407 0.210252 0 0.192440003 -1.40964135</pose>
     <link name="link">
       <inertial>
         <pose>0.01 0.025 0.025 0 0 0</pose>
