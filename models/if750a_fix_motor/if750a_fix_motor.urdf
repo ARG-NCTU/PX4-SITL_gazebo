@@ -1,5 +1,14 @@
 <?xml version="1.0" ?>
 <robot name="if750a_fix_motor">
+  <material name="DarkGrey">
+    <color rgba=".175 .175 .175 1.0"/>
+  </material>
+  <material name="Blue">
+    <color rgba="0 0 1 1" />
+  </material>
+  <material name="Black">
+    <color rgba="0 0 0 1"/>
+  </material>
   <link name="base_link">
     <origin rpy="0 -0 0" xyz="0 0 0"/>
     <inertial>
@@ -12,7 +21,7 @@
       <geometry>
         <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/if750a_fix_motor/meshes/if750a_fix.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="Gazebo/DarkGrey"/>
+      <material name="DarkGrey" />
     </visual>
   </link>
   <link name="imu_link">
@@ -40,9 +49,9 @@
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_ccw.dae" scale="1 1 1"/>
+        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_ccw.stl" scale="1 1 1"/>
       </geometry>
-      <material name="Gazebo/Blue"/>
+      <material name="Blue"/>
     </visual>
   </link>
   <joint name="rotor_0_joint" type="revolute">
@@ -62,9 +71,9 @@
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_ccw.dae" scale="1 1 1"/>
+        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_ccw.stl" scale="1 1 1"/>
       </geometry>
-      <material name="Gazebo/DarkGrey"/>
+      <material name="DarkGrey"/>
     </visual>
   </link>
   <joint name="rotor_1_joint" type="revolute">
@@ -75,18 +84,19 @@
     <origin xyz="-0.265 0.265 0.35"/>
   </joint>
   <link name="rotor_2">
-    <origin rpy="0 -0 0" xyz="0.265 0.265 0.35"/>
     <inertial>
-      <origin rpy="0 -0 0" xyz="0 0 0"/>
-      <mass value="0.005"/>
-      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004"/>
+      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <mass value="0.005" />
+      <inertia ixx="9.75e-07" ixy="0" ixz="0" iyy="0.000273104" iyz="0" izz="0.000274004" />
     </inertial>
     <visual>
-      <origin rpy="0 -0 0" xyz="0 0 0"/>
+      <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_cw.dae" scale="1 1 1"/>
+        <mesh
+          filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_cw.stl"
+          scale="1 1 1" />
       </geometry>
-      <material name="Gazebo/Blue"/>
+      <material name="Blue" />
     </visual>
   </link>
   <joint name="rotor_2_joint" type="revolute">
@@ -106,9 +116,9 @@
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_cw.dae" scale="1 1 1"/>
+        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_cw.stl" scale="1 1 1"/>
       </geometry>
-      <material name="Gazebo/DarkGrey"/>
+      <material name="DarkGrey"/>
     </visual>
   </link>
   <joint name="rotor_3_joint" type="revolute">
@@ -129,7 +139,7 @@
       <geometry>
         <cylinder length="0.002" radius="0.01"/>
       </geometry>
-      <material name="Gazebo/Black"/>
+      <material name="Black"/>
     </visual>
   </link>
   <joint name="gps0_joint" type="fixed">
@@ -148,7 +158,7 @@
       <geometry>
         <cylinder length="0.002" radius="0.01"/>
       </geometry>
-      <material name="Gazebo/Black"/>
+      <material name="Black"/>
     </visual>
   </link>
   <joint name="gps1_joint" type="fixed">
@@ -204,13 +214,4 @@
     <parent link="base_link" />
     <origin rpy="0 0.192440003 -1.40964135" xyz="0.085811 -0.092407 0.210252" />
   </joint>
-  <material name="Gazebo/DarkGrey">
-    <color rgba=".175 .175 .175 1.0"/>
-  </material>
-  <material name="Gazebo/Blue">
-    <color rgba="0 0 1 1.0"/>
-  </material>
-  <material name="Gazebo/Black">
-    <color rgba="0 0 0 1"/>
-  </material>
 </robot>
