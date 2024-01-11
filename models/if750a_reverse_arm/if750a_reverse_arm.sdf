@@ -15,7 +15,7 @@
         </inertia>
       </inertial>
       <collision name='base_link_inertia_collision_left'>
-        <pose>0 0.18 0 0 -0 0</pose>
+        <pose>0 0.18 -0.2 0 -0 0</pose>
         <geometry>
           <box>
             <size>0.35 0.1 0.05</size>
@@ -34,7 +34,7 @@
         </surface>
       </collision>
       <collision name='base_link_inertia_collision_right'>
-        <pose>0 -0.18 0 0 -0 0</pose>
+        <pose>0 -0.18 -0.2 0 -0 0</pose>
         <geometry>
           <box>
             <size>0.35 0.1 0.05</size>
@@ -597,7 +597,7 @@
         </geometry>
         <material>
           <script>
-            <name>Custom/Interbotix</name>
+            <name>Gazebo/Black</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -645,7 +645,7 @@
         </geometry>
         <material>
           <script>
-            <name>Custom/Interbotix</name>
+            <name>Gazebo/Black</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -713,7 +713,7 @@
         </geometry>
         <material>
           <script>
-            <name>Custom/Interbotix</name>
+            <name>Gazebo/Black</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -781,7 +781,7 @@
         </geometry>
         <material>
           <script>
-            <name>Custom/Interbotix</name>
+            <name>Gazebo/Black</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -849,7 +849,7 @@
         </geometry>
         <material>
           <script>
-            <name>Custom/Interbotix</name>
+            <name>Gazebo/Black</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -917,7 +917,7 @@
         </geometry>
         <material>
           <script>
-            <name>Custom/Interbotix</name>
+            <name>Gazebo/Black</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -1029,7 +1029,7 @@
         </geometry>
         <material>
           <script>
-            <name>Custom/Interbotix</name>
+            <name>Gazebo/Black</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -1095,7 +1095,7 @@
         </geometry>
         <material>
           <script>
-            <name>Custom/Interbotix</name>
+            <name>Gazebo/Black</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -1254,7 +1254,7 @@
         </geometry>
         <material>
           <script>
-            <name>Custom/Interbotix</name>
+            <name>Gazebo/Black</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -1322,7 +1322,7 @@
         </geometry>
         <material>
           <script>
-            <name>Custom/Interbotix</name>
+            <name>Gazebo/Black</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
