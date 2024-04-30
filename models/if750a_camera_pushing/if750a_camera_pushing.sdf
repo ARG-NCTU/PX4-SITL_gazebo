@@ -612,7 +612,7 @@
     </joint>
 
     <model name="front_camera">
-      <pose>0.1358 0 0.2282 0 0.19198621771 0</pose>
+      <pose>0.14227 0 0.2282 0 0.366519143 0</pose>
       <link name="link">
         <inertial>
           <pose>0.01 0.025 0.025 0 0 0</pose>
@@ -725,7 +725,7 @@
     </joint>
 
     <model name="left_camera">
-      <pose>0.085811 0.092407 0.210252 0 0.192440003 1.40964135</pose>
+      <pose>0.09942 0.10153 0.2282 0 0.366519143 0.968657735</pose>
       <link name="link">
         <inertial>
           <pose>0.01 0.025 0.025 0 0 0</pose>
@@ -782,7 +782,7 @@
     </joint>
 
     <model name="right_camera">
-      <pose>0.085811 -0.092407 0.210252 0 0.192440003 1.40964135</pose>
+      <pose>0.09942 -0.10153 0.2282 0 0.366519143 -0.968657735</pose>
       <link name="link">
         <inertial>
           <pose>0.01 0.025 0.025 0 0 0</pose>
