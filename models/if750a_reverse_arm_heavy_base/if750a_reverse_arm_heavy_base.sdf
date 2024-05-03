@@ -463,12 +463,16 @@
       <robotNamespace/>
     </plugin>
     <plugin name='magnetometer_plugin' filename='libgazebo_magnetometer_plugin.so'>
-      <robotNamespace/>
-      <pubRate>100</pubRate>
+      <robotNamespace/><pubRate>100</pubRate>
+      <noiseDensity>0.0</noiseDensity>
+      <randomWalk>0.0</randomWalk>
+      <biasCorrelationTime>600</biasCorrelationTime>
+      <magTopic>/mag</magTopic>
+      <!-- <pubRate>100</pubRate>
       <noiseDensity>0.0004</noiseDensity>
       <randomWalk>6.4e-06</randomWalk>
       <biasCorrelationTime>600</biasCorrelationTime>
-      <magTopic>/mag</magTopic>
+      <magTopic>/mag</magTopic> -->
     </plugin>
     <plugin name='barometer_plugin' filename='libgazebo_barometer_plugin.so'>
       <robotNamespace/>
@@ -548,14 +552,22 @@
       <robotNamespace/>
       <linkName>/imu_link</linkName>
       <imuTopic>/imu</imuTopic>
-      <gyroscopeNoiseDensity>0.0003394</gyroscopeNoiseDensity>
+      <gyroscopeNoiseDensity>0.0</gyroscopeNoiseDensity>
+      <gyroscopeRandomWalk>0.0</gyroscopeRandomWalk>
+      <gyroscopeBiasCorrelationTime>1000.0</gyroscopeBiasCorrelationTime>
+      <gyroscopeTurnOnBiasSigma>0.0087</gyroscopeTurnOnBiasSigma>
+      <accelerometerNoiseDensity>0.0</accelerometerNoiseDensity>
+      <accelerometerRandomWalk>0.0</accelerometerRandomWalk>
+      <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
+      <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
+      <!-- <gyroscopeNoiseDensity>0.0003394</gyroscopeNoiseDensity>
       <gyroscopeRandomWalk>3.8785e-05</gyroscopeRandomWalk>
       <gyroscopeBiasCorrelationTime>1000.0</gyroscopeBiasCorrelationTime>
       <gyroscopeTurnOnBiasSigma>0.0087</gyroscopeTurnOnBiasSigma>
       <accelerometerNoiseDensity>0.004</accelerometerNoiseDensity>
       <accelerometerRandomWalk>0.006</accelerometerRandomWalk>
       <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
-      <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
+      <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma> -->
     </plugin>
 
      <!-- add wx200 arm -->
@@ -1373,7 +1385,7 @@
     <update_rate>100</update_rate>
     <grip_count_threshold>2</grip_count_threshold>
     <max_grip_count>8</max_grip_count>
-    <release_tolerance>0.005</release_tolerance>
+    <release_tolerance>0.007</release_tolerance>
     <disable_collisions_on_attach>true</disable_collisions_on_attach>
     <contact_topic>__default_topic__</contact_topic>
   </plugin>
@@ -1461,7 +1473,7 @@
             <height>480</height>
           </image>
           <clip>
-            <near>0.1</near>
+            <near>0.01</near>
             <far>10</far>
           </clip>
         </camera>
@@ -1469,7 +1481,7 @@
           <cameraName>drone/downward_camera</cameraName>
           <alwaysOn>true</alwaysOn>
           <updateRate>60</updateRate>
-          <pointCloudCutoff>0.2</pointCloudCutoff>
+          <pointCloudCutoff>0.01</pointCloudCutoff>
           <pointCloudCutoffMax>10</pointCloudCutoffMax>
           <imageTopicName>rgb/image_raw</imageTopicName>
           <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
@@ -1518,7 +1530,7 @@
             <height>480</height>
           </image>
           <clip>
-            <near>0.1</near>
+            <near>0.01</near>
             <far>10</far>
           </clip>
         </camera>
@@ -1526,8 +1538,8 @@
           <cameraName>drone/left_camera</cameraName>
           <alwaysOn>true</alwaysOn>
           <updateRate>30</updateRate>
-          <pointCloudCutoff>0.2</pointCloudCutoff>
-          <pointCloudCutoffMax>20</pointCloudCutoffMax>
+          <pointCloudCutoff>0.01</pointCloudCutoff>
+          <pointCloudCutoffMax>10</pointCloudCutoffMax>
           <imageTopicName>rgb/image_raw</imageTopicName>
           <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
           <depthImageTopicName>depth/image_raw</depthImageTopicName>
@@ -1574,7 +1586,7 @@
             <height>480</height>
           </image>
           <clip>
-            <near>0.1</near>
+            <near>0.01</near>
             <far>10</far>
           </clip>
         </camera>
@@ -1582,8 +1594,8 @@
           <cameraName>drone/right_camera</cameraName>
           <alwaysOn>true</alwaysOn>
           <updateRate>30</updateRate>
-          <pointCloudCutoff>0.2</pointCloudCutoff>
-          <pointCloudCutoffMax>20</pointCloudCutoffMax>
+          <pointCloudCutoff>0.01</pointCloudCutoff>
+          <pointCloudCutoffMax>10</pointCloudCutoffMax>
           <imageTopicName>rgb/image_raw</imageTopicName>
           <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
           <depthImageTopicName>depth/image_raw</depthImageTopicName>
