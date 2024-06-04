@@ -1381,11 +1381,11 @@
         <gripper_link>wx200/left_finger_link</gripper_link>
         <gripper_link>wx200/right_finger_link</gripper_link>
       </arm>
-    <forces_angle_tolerance>150</forces_angle_tolerance>
-    <update_rate>100</update_rate>
-    <grip_count_threshold>2</grip_count_threshold>
-    <max_grip_count>8</max_grip_count>
-    <release_tolerance>0.007</release_tolerance>
+    <forces_angle_tolerance>90</forces_angle_tolerance>
+    <update_rate>64</update_rate>
+    <grip_count_threshold>1</grip_count_threshold>
+    <max_grip_count>128</max_grip_count>
+    <release_tolerance>0.0045</release_tolerance>
     <disable_collisions_on_attach>true</disable_collisions_on_attach>
     <contact_topic>__default_topic__</contact_topic>
   </plugin>
@@ -1505,7 +1505,8 @@
   </joint>
 
   <model name="left_camera">
-    <pose>0.085811 0.092407 0.210252 0 0.192440003 1.40964135</pose>
+    <!-- <pose>0.085811 0.092407 0.210252 0 0.192440003 1.40964135</pose> -->
+    <pose>0.085811 0.092407 0.210252 0 0.192440003 0.96</pose>
     <link name="link">
       <inertial>
         <pose>0.01 0.025 0.025 0 0 0</pose>
@@ -1562,7 +1563,8 @@
   </joint>
 
   <model name="right_camera">
-    <pose>0.085811 -0.092407 0.210252 0 0.192440003 -1.40964135</pose>
+    <!-- <pose>0.085811 -0.092407 0.210252 0 0.192440003 -1.40964135</pose> -->
+    <pose>0.085811 -0.092407 0.210252 0 0.192440003 -0.96</pose>
     <link name="link">
       <inertial>
         <pose>0.01 0.025 0.025 0 0 0</pose>
