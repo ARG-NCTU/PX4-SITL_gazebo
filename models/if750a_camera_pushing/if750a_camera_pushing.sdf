@@ -538,37 +538,77 @@
       <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
       <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
     </plugin>
-    <!-- <link name='vertical_rod_link'>
-      <pose>0 0 -0.075 0 0 0</pose>
+    <link name='vertical_rod_link'>
+      <pose>0 0 0.125 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>0.00001</mass>
+        <mass>0.001</mass>
         <inertia>
-          <ixx>1e-08</ixx>
+          <ixx>2e-05</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1e-08</iyy>
+          <iyy>2e-05</iyy>
           <iyz>0</iyz>
-          <izz>1e-08</izz>
+          <izz>5e-07</izz>
         </inertia>
       </inertial>
       <visual name='visual'>
         <pose>0 0 0 0 0 0</pose>
-        <origin xyz='0 0 0' rpy='0 0 0'/>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
-            <length>0.15</length>
+            <length>0.25</length>
           </cylinder>
         </geometry>
       </visual>
+      <collision name='collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>0.25</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <sensor name='contactsensor_sensor' type='contact'>
+        <always_on>true</always_on>
+        <update_rate>20.0</update_rate>
+        <contact>
+          <collision>collision</collision>
+        </contact>
+        <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+          <robotNamespace>/drone</robotNamespace>
+          <always_on>true</always_on>
+          <updaterate>20.0</updaterate>
+          <bumperTopicName>bumper_states</bumperTopicName>
+          <frameName>drone</frameName>
+        </plugin>
+      </sensor>
     </link>
-    <joint name='vertical_rod_joint' type='fixed'>
-      <child>vertical_rod_link</child>
+    <joint name="vertical_rod_joint" type="prismatic">
       <parent>base_link</parent>
-    </joint> -->
+      <child>vertical_rod_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>0.0</upper>
+          <effort>0.5</effort>
+          <velocity>0.15</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.0</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+    </joint>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/drone</robotNamespace>
+      <robotParam>/drone/robot_description</robotParam>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
     <link name='horizontal_rod_link'>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0.05 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.00001</mass>
@@ -610,7 +650,6 @@
       <child>horizontal_rod_link</child>
       <parent>base_link</parent>
     </joint>
-
     <model name="front_camera">
       <pose>0.14227 0 0.2282 0 0.366519143 0</pose>
       <link name="link">
@@ -661,12 +700,10 @@
         </sensor>
       </link>
     </model>
-
     <joint name="front_camera_joint" type="fixed">
       <child>front_camera::link</child>
       <parent>base_link</parent>
     </joint>
-
     <model name="downward_camera">
       <pose>0.127909 0 0.187349 0 1.570796327 0</pose>
       <link name="link">
@@ -718,12 +755,10 @@
         </sensor>
       </link>
     </model>
-
     <joint name="downward_camera_joint" type="fixed">
       <child>downward_camera::link</child>
       <parent>base_link</parent>
     </joint>
-
     <model name="left_camera">
       <pose>0.09942 0.10153 0.2282 0 0.366519143 0.968657735</pose>
       <link name="link">
@@ -775,12 +810,10 @@
         </sensor>
       </link>
     </model>
-
     <joint name="left_camera_joint" type="fixed">
       <child>left_camera::link</child>
       <parent>base_link</parent>
     </joint>
-
     <model name="right_camera">
       <pose>0.09942 -0.10153 0.2282 0 0.366519143 -0.968657735</pose>
       <link name="link">
@@ -831,11 +864,103 @@
         </sensor>
       </link>
     </model>
-
     <joint name="right_camera_joint" type="fixed">
       <child>right_camera::link</child>
       <parent>base_link</parent>
     </joint>
-    
+    <link name='velodyne_link'>
+      <pose>0 0 0.125 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>2e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual1'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///opt/ros/melodic/share/velodyne_description/meshes/VLP16_base_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='visual2'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///opt/ros/melodic/share/velodyne_description/meshes/VLP16_base_2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='visual_scan'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///opt/ros/melodic/share/velodyne_description/meshes/VLP16_scan.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose>0 0 0.03585 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0516</radius>
+            <length>0.0717</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <sensor type="gpu_ray" name="VLP16">
+        <always_on>true</always_on>
+        <visualize>false</visualize>
+        <update_rate>10</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1875</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.1415926536</min_angle>
+              <max_angle>3.1415926536</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>16</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.2617993878</min_angle>
+              <max_angle>0.2617993878</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.3</min>
+            <max>131</max>
+            <resolution>0.001</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.0</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_laser_controller" filename="libgazebo_ros_velodyne_gpu_laser.so">
+          <topicName>/velodyne_points</topicName>
+          <frameName>velodyne</frameName>
+          <min_range>0.9</min_range>
+          <max_range>130</max_range>
+          <gaussianNoise>0.008</gaussianNoise>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='velodyne_joint' type='fixed'>
+      <child>velodyne_link</child>
+      <parent>base_link</parent>
+    </joint>
   </model>
 </sdf>

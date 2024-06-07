@@ -25,9 +25,7 @@
     <visual>
       <origin rpy="1.570796 -0 1.57079632679489661923" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/if750a_camera_pushing/meshes/if750a.stl"
-          scale="0.001 0.001 0.001" />
+        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/if750a_camera_pushing/meshes/if750a.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="darkgrey" />
     </visual>
@@ -56,9 +54,7 @@
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_ccw.stl"
-          scale="1 1 1" />
+        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_ccw.stl" scale="1 1 1" />
       </geometry>
       <material name="blue" />
     </visual>
@@ -79,9 +75,7 @@
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_ccw.stl"
-          scale="1 1 1" />
+        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_ccw.stl" scale="1 1 1" />
       </geometry>
       <material name="darkgrey" />
     </visual>
@@ -102,9 +96,7 @@
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_cw.stl"
-          scale="1 1 1" />
+        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_cw.stl" scale="1 1 1" />
       </geometry>
       <material name="blue" />
     </visual>
@@ -125,9 +117,7 @@
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
-        <mesh
-          filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_cw.stl"
-          scale="1 1 1" />
+        <mesh filename="file:///home/argrobotx/robotx-2022/Firmware/Tools/sitl_gazebo/models/iris/meshes/iris_prop_cw.stl" scale="1 1 1" />
       </geometry>
       <material name="darkgrey" />
     </visual>
@@ -242,6 +232,72 @@
   <joint name="horizontal_rod_joint" type="fixed">
     <child link="horizontal_rod_link" />
     <parent link="base_link" />
-    <origin rpy="0 0 0" xyz="0.0 0 0.0" />
+    <origin rpy="0 0 0" xyz="0.0 0 0.05" />
+  </joint>
+
+  <link name="vertical_rod_link">
+    <inertial>
+      <mass value="0.001" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="5e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.03" length="0.25" />
+      </geometry>
+      <material name="white" />
+    </visual>
+  </link>
+
+  <joint name="vertical_rod_joint" type="prismatic">
+    <parent link="base_link" />
+    <child link="vertical_rod_link" />
+    <origin xyz="0 0 0.125" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.5" upper="0.0" effort="0.5" velocity="0.15" />
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="vertical_rod_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <link name="velodyne_link">
+    <inertial>
+      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="5e-7" />
+    </inertial>
+    <visual>
+      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///opt/ros/melodic/share/velodyne_description/meshes/VLP16_base_1.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///opt/ros/melodic/share/velodyne_description/meshes/VLP16_base_2.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///opt/ros/melodic/share/velodyne_description/meshes/VLP16_scan.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="velodyne_joint" type="fixed">
+    <child link="velodyne_link" />
+    <parent link="base_link" />
+    <origin rpy="0 0 0" xyz="0 0 0.125" />
   </joint>
 </robot>
