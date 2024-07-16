@@ -594,7 +594,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_1_baseg.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_1_base.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -604,7 +604,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_1_base.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_1_base.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -642,7 +642,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_2_shoulder.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_2_shoulder.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -652,7 +652,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_2_shoulder.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_2_shoulder.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -710,7 +710,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_3_upper_arm.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_3_upper_arm.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -720,7 +720,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_3_upper_arm.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_3_upper_arm.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -778,7 +778,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_4_forearm.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_4_forearm.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -788,7 +788,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_4_forearm.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_4_forearm.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -846,7 +846,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_5_wrist.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_5_wrist.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -856,7 +856,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_5_wrist.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_5_wrist.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -914,7 +914,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_6_gripper.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_6_gripper.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -924,7 +924,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_6_gripper.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_6_gripper.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1026,7 +1026,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_7_gripper_prop.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_7_gripper_prop.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1036,7 +1036,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_7_gripper_prop.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_7_gripper_prop.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1092,7 +1092,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_8_gripper_bar.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_8_gripper_bar.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1102,7 +1102,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_8_gripper_bar.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_8_gripper_bar.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1251,7 +1251,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_9_gripper_finger.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_9_gripper_finger.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1261,7 +1261,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_9_gripper_finger.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_9_gripper_finger.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1319,7 +1319,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_9_gripper_finger.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_9_gripper_finger.stl</uri>
           </mesh>
         </geometry>
         <max_contacts>10</max_contacts>
@@ -1329,7 +1329,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/argrobotx/robotx-2022/catkin_ws/src/interbotix_arm/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes/wx200_9_gripper_finger.stl</uri>
+            <uri>model://if750a_reverse_arm_heavy_base/meshes/wx200_9_gripper_finger.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1385,7 +1385,7 @@
     <update_rate>64</update_rate>
     <grip_count_threshold>1</grip_count_threshold>
     <max_grip_count>128</max_grip_count>
-    <release_tolerance>0.0045</release_tolerance>
+    <release_tolerance>0.0040</release_tolerance>
     <disable_collisions_on_attach>true</disable_collisions_on_attach>
     <contact_topic>__default_topic__</contact_topic>
   </plugin>
