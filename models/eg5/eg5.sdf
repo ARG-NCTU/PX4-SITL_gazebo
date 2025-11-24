@@ -6,12 +6,12 @@
         <pose>0 0 0.25 0 -0 0</pose>
         <mass>19.1</mass>
         <inertia>
-          <ixx>4.877</ixx>
+          <ixx>5</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>6.42</iyy>
+          <iyy>5</iyy>
           <iyz>0</iyz>
-          <izz>13.68</izz>
+          <izz>8</izz>
         </inertia>
       </inertial>
       <collision name='base_link_collision'>
@@ -411,7 +411,7 @@
       <momentConstant>0.016</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
       <motorNumber>0</motorNumber>
-      <rotorDragCoefficient>0.0029</rotorDragCoefficient>
+      <rotorDragCoefficient>0.012</rotorDragCoefficient>
       <rollingMomentCoefficient>3.6e-06</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
@@ -427,10 +427,10 @@
       <motorConstant>0.00025</motorConstant>
       <momentConstant>0.016</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
-      <motorNumber>0</motorNumber>
-      <rotorDragCoefficient>0.0029</rotorDragCoefficient>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>0.012</rotorDragCoefficient>
       <rollingMomentCoefficient>3.6e-06</rollingMomentCoefficient>
-      <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
+      <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
     <plugin name='front_left_motor_model' filename='libgazebo_motor_model.so'>
@@ -444,10 +444,10 @@
       <motorConstant>0.00025</motorConstant>
       <momentConstant>0.016</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
-      <motorNumber>0</motorNumber>
-      <rotorDragCoefficient>0.0029</rotorDragCoefficient>
+      <motorNumber>2</motorNumber>
+      <rotorDragCoefficient>0.012</rotorDragCoefficient>
       <rollingMomentCoefficient>3.6e-06</rollingMomentCoefficient>
-      <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
+      <motorSpeedPubTopic>/motor_speed/2</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
     <plugin name='back_right_motor_model' filename='libgazebo_motor_model.so'>
@@ -461,10 +461,10 @@
       <motorConstant>0.00025</motorConstant>
       <momentConstant>0.016</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
-      <motorNumber>0</motorNumber>
-      <rotorDragCoefficient>0.0029</rotorDragCoefficient>
+      <motorNumber>3</motorNumber>
+      <rotorDragCoefficient>0.012</rotorDragCoefficient>
       <rollingMomentCoefficient>3.6e-06</rollingMomentCoefficient>
-      <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
+      <motorSpeedPubTopic>/motor_speed/3</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
     <plugin name='groundtruth_plugin' filename='libgazebo_groundtruth_plugin.so'>
